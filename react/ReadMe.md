@@ -118,3 +118,66 @@
 <a b="c" />
 <a b='"' />
 ```
+
+## 6. jsx标签属性与属性值之间不应存在空格
+
+**Rule:** [jsx-equals-spacing](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md)
+
+### Wrong
+```jsx
+<Hello name = {firstname} />;
+<Hello name ={firstname} />;
+<Hello name= {firstname} />;
+```
+
+### Right
+```jsx 
+<Hello name={firstname} />;
+<Hello name />;
+<Hello {...props} />;
+```
+
+## 7. jsx标签属性换行后需缩进一个tab
+
+**Rule:** [jsx-indent-props](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md)
+
+### Wrong
+```jsx
+// 2 spaces indentation
+<Hello
+  firstName="John"
+/>
+
+// no indentation
+<Hello
+firstName="John"
+/>
+
+```
+
+### Right
+```jsx 
+// 1 tab indentation
+<Hello
+  firstName="John"
+/>
+```
+
+## 8. 循环中的标签必须加上key属性
+
+**Rule:** [jsx-key](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md)
+
+### Wrong
+```jsx
+let data = [<Hello />, <Hello />, <Hello />];
+
+data.map(x => <Hello>x</Hello>);
+
+```
+
+### Right
+```jsx 
+let data = [<Hello />, <Hello />, <Hello />];
+
+data.map((x, i) => <Hello  key={i}>x</Hello>);
+```
