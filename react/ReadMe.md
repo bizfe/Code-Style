@@ -6,7 +6,7 @@
 
 可以将此配置与业务项目的eslintrc进行merge，已达到Reactjs代码检查的目的。
 
-**Demo:** [reactjs-boilerplate](https://github.com/bizfe/reactjs-boilerplate)。
+**Demo:** [reactjs-boilerplate](https://github.com/bizfe/reactjs-boilerplate)
 
 -
 
