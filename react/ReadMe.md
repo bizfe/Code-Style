@@ -4,7 +4,9 @@
 此规范根据[eslint](http://eslint.org/), 和[eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)提供的rules进行检查。
 具体配置见[eslintrc](https://github.com/bizfe/Code-Style/blob/master/react/eslintrc)。
 
-可以将此配置与业务项目的eslintrc进行merge，已达到Reactjs代码检查。Demo [reactjs-boilerplate](https://github.com/bizfe/reactjs-boilerplate)。
+可以将此配置与业务项目的eslintrc进行merge，已达到Reactjs代码检查的目的。
+
+**Demo:** [reactjs-boilerplate](https://github.com/bizfe/reactjs-boilerplate)。
 
 -
 
