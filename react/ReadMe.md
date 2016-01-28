@@ -12,7 +12,9 @@
 
 ## 1. jsx语法必须使用tab缩进，父子标签缩进一个tab
 **Rule:** [jsx-indent](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md)
+
 **备注:** 一个tab对应4个空格
+
 ### Wrong
 ```jsx
 // 2 spaces indentation
@@ -97,6 +99,7 @@
 ## 5. jsx标签属性值，使用双引号作为属性值的界定符
 
 **Rule:** [jsx-quotes](http://eslint.org/docs/rules/jsx-quotes)
+
 **描述:** jsx标签属性值，可以使用双引号或单引号作为属性值的界定符。但是当要使用`"`或`'`作为属性值时你必须使用如下方式
 ```jsx
 <a b="'" />
