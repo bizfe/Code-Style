@@ -1,3 +1,119 @@
 ## Reactjs代码规范
 
 此规范根据eslint, eslint-plugin-react提供的rules进行检查
+
+### 1. jsx语法必须使用tab缩进，父子标签缩进一个tab. (一个tab对应4个空格) 
+
+#### Rule Reference
+`react/jsx-indent": [2, 'tab']`
+[jsx-indent](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md)
+
+#### Wrong
+```jsx
+// 2 spaces indentation
+<App>
+		<Hello />
+</App>
+
+// no indentation
+<App>
+<Hello />
+</App>
+```
+#### Right
+```jsx 
+<App>
+	<Hello />
+</App>	
+```
+
+### 2. jsx自定义标签在没有子标签的情况下应该自闭合，存在子标签的情况使用才闭合标签。
+
+#### Rule Reference
+`react/self-closing-comp": 2`
+[self-closing-comp](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+
+#### Wrong
+```jsx
+//多余的闭合标签
+<Hello name="John"></Hello>;
+```
+
+#### Right
+```jsx 
+//html原生标签按着html规范书写
+<div className="content"></div>	
+
+//right
+<Hello name="John" />;
+
+//right
+<Hello name="John"><img src="picture.png" /></Hello>;
+```
+
+### 3. jsx自定义标签上的属性一行不应该超过3个。
+#### Rule Reference
+`react/jsx-max-props-per-line": [2, {'maximum': 3}]`
+[jsx-max-props-per-line](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md)
+
+#### Wrong
+```jsx
+
+//超过3个
+<Hello {...this.props} firstName="John" lastName="Smith"  tel={5555555} />;
+
+//不超过3个不应换行
+<Hello
+  firstName="John" lastName="Smith"
+  tel={5555555}
+/>;
+```
+
+#### Right
+```jsx 
+<Hello firstName="John" lastName="Smith" />;
+
+<Hello firstName="John" lastName="Smith" tel={5555555} />;
+
+<Hello  {...this.props}  firstName="John" lastName="Smith" 
+	tel={5555555} />;
+```
+### 4. jsx自定义标签属性的大括号之间两边不应该存在空格
+#### Rule Reference
+`"react/jsx-curly-spacing": [2, 'never']`
+[jsx-curly-spacing](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
+
+#### Wrong
+```jsx
+<Hello name={ firstname } />;
+<Hello name={ firstname} />;
+<Hello name={firstname } />;
+```
+
+#### Right
+```jsx 
+<Hello name={firstname} />;
+<Hello name={{ firstname: 'John', lastname: 'Doe' }} />;
+```
+### 4. jsx自定义标签属性值，可以使用双引号或单引号作为属性值的界定符。但是当要使用`"`或`'`作为属性值时你必须使用如下方式
+```jsx
+<a b="'" />
+<a b='"' />
+```
+为了和html标签属性保持统一，此规范默认使用双引号作为属性值的界定符。
+
+#### Rule Reference
+`"react/jsx-curly-spacing": [2, 'never']`
+[jsx-quotes](http://eslint.org/docs/rules/jsx-quotes)
+
+#### Wrong
+```jsx
+<a b='c' />
+
+```
+
+#### Right
+```jsx 
+<a b="c" />
+<a b='"' />
+```
