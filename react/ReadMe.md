@@ -8,6 +8,8 @@
 
 **Demo:** [reactjs-boilerplate](https://github.com/bizfe/reactjs-boilerplate)
 
+注：若jsx代码文件后缀不是.js，在配置eslint时，需要指明: eslint --ext=js,jsx your-folder
+
 -
 
 ## 1. jsx语法必须使用tab缩进，父子标签缩进一个tab
